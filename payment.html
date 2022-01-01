@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&family=Source+Sans+Pro:wght@300;400;600&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+      </head>
+      
+      <canvas class="orb-canvas"></canvas>
+      
+      <div class="glass">
+        <div id="membershipCard" class="card">
+          <div class="container">
+            <h3 class="card-text">Membership</h3>
+            <h4 class="card-price">£19.99</h4>
+            <p>per month</p></br>
+            <p class="card-detail">Please confirm membership and complete payment below to start your subscription</p>
+            <button id="confirmButton" class="submit-btn" onclick="showPay()">Click to Confirm</button>
+          </div>
+        </div>
+        </br>
+        <div class="card">
+          <div class="container">
+            <div>
+              <h3 class="card-text">Payment Details</h3>
+              <div>
+                  <input class="input_list" type="text" placeholder="Cardholder  Name"></input>
+                  <input class="input_list" type="text" placeholder="Card Number"></input>
+                  <input class="input_list"  type="text" placeholder="Expiry"></input>
+                  <input class="input_list"  type="text" placeholder="SVC"></input>
+              </div>
+              <form action="customer_id.html" method="post">
+                <button id="payButton" class="submit-btn pay-btn" onclick="mainpage.html">Complete Payment</button>
+              </form>
+              <!-- <button id="payButton" class="submit-btn pay-btn" onclick="mainpage.html">Complete Payment</button> -->
+            </div>
+            </br>
+            <p id="cardPlaceholder" class="muted">Please confirm membership</p>
+            <script>
+              function showPay() {
+              var x = document.getElementById("payButton");
+              var y = document.getElementById("confirmButton");
+              var z = document.getElementById("membershipCard");
+                var n = document.getElementById("cardPlaceholder");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "block";
+                y.innerHTML = "Confirmed";
+                y.disabled = true;
+                z.style.border = "3px solid #3590d4"
+                n.style.display = "none";
+              }
+            }
+            </script>
+        </div>
+      </div>
+</body>
+</html>
